@@ -3,4 +3,11 @@ name = "rustopus"
 version = "0.1.0"
 edition = "2021"
 
+
 [dependencies]
+bindgen = "0.70.1" # Use the latest version of bindgen
+libc = "0.2"     # For C types and memory safety with FFI
+
+[build-dependencies]
+cc = "1.1.34"
+bindgen = "0.70.1"
