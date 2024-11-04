@@ -2,10 +2,7 @@ use std::path::PathBuf;
 use bindgen;
 
 fn main() {
-
-    println!("cargo:rustc-link-lib=opus");
-    println!("cargo:rustc-link-lib=static=opus");
-    println!("cargo:rustc-link-search=native=opus/.libs");
+    println!("cargo:rustc-link-lib=dylib=opus");
 
     // Generate bindings
     let bindings = bindgen::Builder::default()
