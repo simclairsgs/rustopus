@@ -1,13 +1,11 @@
-use std::env;
 use std::path::PathBuf;
 use bindgen;
 
 fn main() {
-    // Specify the path to Opus headers (adjust as necessary)
-    let opus_include_path = "opus/include"; // Change this if Opus is installed elsewhere
 
-    // Instruct Cargo to link with Opus library
     println!("cargo:rustc-link-lib=opus");
+    println!("cargo:rustc-link-lib=static=opus");
+    println!("cargo:rustc-link-search=native=opus/.libs");
 
     // Generate bindings
     let bindings = bindgen::Builder::default()
@@ -18,7 +16,6 @@ fn main() {
         .generate()
         .expect("Unable to generate bindings");
 
-    // Write bindings to $OUT_DIR/bindings.rs
     let out_path = PathBuf::from("src/");
     bindings
         .write_to_file(out_path.join("bindings.rs"))
