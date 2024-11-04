@@ -3,6 +3,7 @@ use libc::c_int;
 use crate::{bindings, OpusError};
 use crate::bindings::{opus_decode, opus_decode_float, opus_decoder_create, opus_decoder_destroy, opus_int32, OPUS_OK};
 
+#[derive(Debug)]
 pub struct OpusDecoder {
     sample_rate : u32,
     is_stereo : bool,

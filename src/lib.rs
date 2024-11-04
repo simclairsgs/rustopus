@@ -1,10 +1,13 @@
 mod bindings;
-mod decoder;
-mod encoder;
+pub mod decoder;
+pub mod encoder;
 
-use std::ffi::c_void;
 use bindings::*;
 use libc::c_int;
+
+pub const OPUS_APPLICATION_VOIP: u32 = 2048;
+pub const OPUS_APPLICATION_AUDIO: u32 = 2049;
+pub const OPUS_APPLICATION_RESTRICTED_LOW_DELAY: u32 = 2051;
 
 /// Errors returned by the Opus codec.
 #[derive(Debug)]
