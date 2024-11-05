@@ -1,4 +1,4 @@
-use libc::c_int;
+use core::ffi::c_int;
 use crate::bindings::{opus_encode, opus_encode_float, opus_encoder_create, opus_encoder_ctl, opus_encoder_destroy, OPUS_OK, OPUS_SET_BITRATE_REQUEST, OPUS_SET_COMPLEXITY_REQUEST};
 use crate::{bindings, OpusError};
 

@@ -1,5 +1,5 @@
 use std::ptr;
-use libc::c_int;
+use core::ffi::c_int;
 use crate::{bindings, OpusError};
 use crate::bindings::{opus_decode, opus_decode_float, opus_decoder_create, opus_decoder_destroy, opus_int32, OPUS_OK};
 
