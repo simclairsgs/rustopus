@@ -7,6 +7,7 @@ fn main() {
     // Generate bindings
     let bindings = bindgen::Builder::default()
         .header("src/wrapper.h")
+        .use_core()
         .allowlist_function("opus_.*")
         .allowlist_type("Opus.*")
         .allowlist_var("OPUS_.*")
